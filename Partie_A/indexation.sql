@@ -4,3 +4,19 @@ FROM commandes cmd
     JOIN clients c ON c.id = cmd.client_id
 GROUP BY
     c.segment
+
+SELECT * FROM mv_synthese_segments;
+
+INSERT INTO
+    commandes (
+        client_id,
+        date_commande,
+        statut,
+        montant_total
+    )
+VALUES (
+        1,
+        '2026-11-20 10:00:00',
+        'LIVREE',
+        9999.00
+    );
